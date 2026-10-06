@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RYVEXON PCs | Gaming PCs</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #07090c;
+    color: white;
+}
+
+nav {
+    height: 75px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #080a0d;
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #00e5ff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #00e5ff;
+}
+
+
+/* BUTTONS */
+
+.button {
+    display: inline-block;
+    background: #00e5ff;
+    color: #000;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+
+    background:
+    radial-gradient(circle at center,
+    #10333c 0%,
+    #07090c 55%);
+}
+
+.hero-small {
+    color: #00e5ff;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 9vw, 105px);
+    line-height: .95;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #00e5ff;
+}
+
+.hero p {
+    color: #aaa;
+    max-width: 650px;
+    line-height: 1.7;
+    font-size: 19px;
+    margin-bottom: 35px;
+}
+
+
+/* PCS */
+
+.pcs {
+    padding: 90px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.section-title span {
+    color: #00e5ff;
+}
+
+.section-description {
+    text-align: center;
+    color: #888;
+    margin-bottom: 50px;
+}
+
+.pc-container {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(270px, 1fr));
+    gap: 25px;
+}
+
+.pc-card {
+    background: #101318;
+    border: 1px solid #252a30;
+    border-radius: 15px;
+    padding: 30px;
+    transition: .3s;
+}
+
+.pc-card:hover {
+    transform: translateY(-8px);
+    border-color: #00e5ff;
+}
+
+.pc-type {
+    color: #00e5ff;
+    letter-spacing: 2px;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.pc-card h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.pc-card ul {
+    list-style: none;
+    color: #bbb;
+    line-height: 2.1;
+    margin-bottom: 25px;
+}
+
+.price {
+    font-size: 33px;
+    font-weight: bold;
+    margin-bottom: 22px;
+}
+
+
+/* WHY */
+
+.why {
+    padding: 90px 8%;
+    background: #0d1014;
+}
+
+.features {
+    max-width: 1000px;
+    margin: 50px auto 0;
+
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 25px;
+}
+
+.feature {
+    padding: 30px;
+    text-align: center;
+    background: #12161b;
+    border: 1px solid #252a30;
+    border-radius: 12px;
+}
+
+.feature h3 {
+    color: #00e5ff;
+    margin-bottom: 12px;
+}
+
+.feature p {
+    color: #999;
+    line-height: 1.6;
+}
+
+
+/* CONTACT */
+
+.contact {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.contact p {
+    color: #999;
+    margin: 20px 0 30px;
+}
+
+
+/* ======================
+   REAPER PAGE
+====================== */
+
+#reaperPage {
+    display: none;
+    min-height: 100vh;
+}
+
+.product-nav {
+    padding: 25px 8%;
+}
+
+.back {
+    color: #00e5ff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.product {
+    padding: 30px 8% 100px;
+
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+
+    gap: 60px;
+    align-items: center;
+}
+
+
+/* IMAGE */
+
+.product-image {
+    background: #0d1014;
+    border: 1px solid #292929;
+    border-radius: 16px;
+    padding: 12px;
+}
+
+.product-image img {
+    display: block;
+    width: 100%;
+    max-height: 700px;
+    object-fit: cover;
+    border-radius: 12px;
+
+    box-shadow:
+    0 0 50px rgba(0,229,255,.15);
+}
+
+
+/* PRODUCT INFO */
+
+.category {
+    color: #00e5ff;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-info h1 {
+    font-size: clamp(48px, 6vw, 75px);
+    line-height: .95;
+    margin-bottom: 25px;
+}
+
+.description {
+    color: #aaa;
+    line-height: 1.7;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.product-price {
+    font-size: 50px;
+    color: #00e5ff;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.cart-button {
+    width: 100%;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+
+/* SPECS */
+
+.spec-title {
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.spec {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #292929;
+}
+
+.spec span {
+    color: #888;
+}
+
+.spec strong {
+    text-align: right;
+}
+
+
+/* BENEFITS */
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.benefit {
+    padding: 15px 10px;
+
+    text-align: center;
+
+    border: 1px solid #252a30;
+
+    background: #0f1216;
+
+    border-radius: 8px;
+
+    color: #aaa;
+
+    font-size: 13px;
+}
+
+.benefit strong {
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+/* CART MESSAGE */
+
+#cartMessage {
+    display: none;
+
+    background: #102a2e;
+
+    border: 1px solid #00e5ff;
+
+    color: #00e5ff;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+    border-radius: 8px;
+
+    text-align: center;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #030405;
+    text-align: center;
+    padding: 30px;
+    color: #666;
+}
+
+
+/* MOBILE */
+
+@media(max-width: 850px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .product {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ======================
+     MAIN WEBSITE
+====================== -->
+
+<div id="mainWebsite">
+
+
+<nav>
+
+<div class="logo">
+RYVEXON <span>PCs</span>
+</div>
+
+<ul>
+
+<li>
+<a href="#home">HOME</a>
+</li>
+
+<li>
+<a href="#gamingPCs">GAMING PCs</a>
+</li>
+
+<li>
+<a href="#why">WHY RYVEXON</a>
+</li>
+
+<li>
+<a href="#contact">CONTACT</a>
+</li>
+
+</ul>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-small">
+RYVEXON GAMING SYSTEMS
+</div>
+
+<h1>
+POWER YOUR
+<br>
+<span>GAME.</span>
+</h1>
+
+<p>
+
+High-performance gaming PCs built with carefully
+selected components, clean designs and serious
+gaming power.
+
+</p>
+
+<a href="#gamingPCs" class="button">
+SHOP GAMING PCs
+</a>
+
+</section>
+
+
+
+<!-- PCS -->
+
+<section class="pcs" id="gamingPCs">
+
+
+<h2 class="section-title">
+
+RYVEXON
+<span>Gaming PCs</span>
+
+</h2>
+
+
+<p class="section-description">
+
+Choose the system that matches the way you play.
+
+</p>
+
+
+<div class="pc-container">
+
+
+
+<!-- REAPER -->
+
+<div class="pc-card">
+
+<p class="pc-type">
+STARTER GAMING
+</p>
+
+<h2>
+RYVONEX REAPER
+</h2>
+
+<ul>
+
+<li>✓ AMD Ryzen 5 5600X</li>
+
+<li>✓ GeForce RTX 4060 8GB</li>
+
+<li>✓ 16GB DDR4 RAM</li>
+
+<li>✓ 1TB NVMe SSD</li>
+
+<li>✓ RGB Gaming Case</li>
+
+</ul>
+
+<div class="price">
+$1,199
+</div>
+
+<button
+class="button"
+onclick="openReaper()">
+
+VIEW PC
+
+</button>
+
+</div>
+
+
+
+<!-- SECOND PC -->
+
+<div class="pc-card">
+
+<p class="pc-type">
+PERFORMANCE GAMING
+</p>
+
+<h2>
+RYVEXON R2
+</h2>
+
+<ul>
+
+<li>✓ High Performance CPU</li>
+
+<li>✓ Powerful Gaming GPU</li>
+
+<li>✓ 32GB RAM</li>
+
+<li>✓ 2TB SSD</li>
+
+<li>✓ RGB Cooling</li>
+
+</ul>
+
+<div class="price">
+$1,599
+</div>
+
+<button class="button">
+COMING SOON
+</button>
+
+</div>
+
+
+
+<!-- THIRD PC -->
+
+<div class="pc-card">
+
+<p class="pc-type">
+EXTREME GAMING
+</p>
+
+<h2>
+RYVEXON R3
+</h2>
+
+<ul>
+
+<li>✓ High-End Gaming CPU</li>
+
+<li>✓ High-End Gaming GPU</li>
+
+<li>✓ 32GB RAM</li>
+
+<li>✓ 2TB NVMe SSD</li>
+
+<li>✓ Advanced Cooling</li>
+
+</ul>
+
+<div class="price">
+$1,999
+</div>
+
+<button class="button">
+COMING SOON
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- WHY -->
+
+<section class="why" id="why">
+
+
+<h2 class="section-title">
+
+Why
+<span>RYVEXON?</span>
+
+</h2>
+
+
+<div class="features">
+
+
+<div class="feature">
+
+<h3>
+PERFORMANCE
+</h3>
+
+<p>
+Components selected for excellent gaming performance.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<h3>
+QUALITY
+</h3>
+
+<p>
+Every RYVEXON PC is carefully assembled and tested.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<h3>
+BUILT FOR GAMERS
+</h3>
+
+<p>
+Gaming PCs designed for smooth gameplay and future upgrades.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">
+
+READY TO
+<span>GAME?</span>
+
+</h2>
+
+<p>
+Contact RYVEXON PCs to learn more about our gaming systems.
+</p>
+
+<a
+href="mailto:your-email@example.com"
+class="button">
+
+CONTACT US
+
+</a>
+
+</section>
+
+
+<footer>
+
+© 2026 RYVEXON PCs. All rights reserved.
+
+</footer>
+
+
+</div>
+
+
+
+<!-- =========================
+     REAPER PRODUCT PAGE
+========================= -->
+
+<div id="reaperPage">
+
+
+<div class="product-nav">
+
+<span
+class="back"
+onclick="closeReaper()">
+
+← BACK TO GAMING PCs
+
+</span>
+
+</div>
+
+
+
+<section class="product">
+
+
+
+<!-- IMAGE -->
+
+<div class="product-image">
+
+<img
+src="https://i.pinimg.com/originals/ef/45/c9/ef45c97f28d30f85beb239b706a86804.jpg"
+alt="RYVONEX REAPER Gaming PC">
+
+</div>
+
+
+
+<!-- INFORMATION -->
+
+<div class="product-info">
+
+
+<p class="category">
+STARTER GAMING PC
+</p>
+
+
+<h1>
+
+RYVONEX
+<br>
+REAPER
+
+</h1>
+
+
+<p class="description">
+
+The RYVONEX REAPER is built for gamers looking
+for powerful performance, fast storage and a
+clean RGB gaming setup.
+
+</p>
+
+
+<div class="product-price">
+
+$1,199
+
+</div>
+
+
+<div id="cartMessage">
+
+✓ RYVONEX REAPER added to your cart!
+
+</div>
+
+
+<button
+class="button cart-button"
+onclick="addToCart()">
+
+ADD TO CART
+
+</button>
+
+
+
+<h3 class="spec-title">
+
+SPECIFICATIONS
+
+</h3>
+
+
+
+<div class="spec">
+
+<span>CPU</span>
+
+<strong>
+AMD Ryzen 5 5600X
+</strong>
+
+</div>
+
+
+
+<div class="spec">
+
+<span>GPU</span>
+
+<strong>
+NVIDIA GeForce RTX 4060 8GB
+</strong>
+
+</div>
+
+
+
+<div class="spec">
+
+<span>RAM</span>
+
+<strong>
+16GB DDR4
+</strong>
+
+</div>
+
+
+
+<div class="spec">
+
+<span>STORAGE</span>
+
+<strong>
+1TB NVMe SSD
+</strong>
+
+</div>
+
+
+
+<div class="spec">
+
+<span>COOLING</span>
+
+<strong>
+RGB Air Cooling
+</strong>
+
+</div>
+
+
+
+<div class="spec">
+
+<span>POWER SUPPLY</span>
+
+<strong>
+650W 80+ Bronze
+</strong>
+
+</div>
+
+
+
+<div class="spec">
+
+<span>OPERATING SYSTEM</span>
+
+<strong>
+Windows 11
+</strong>
+
+</div>
+
+
+
+<div class="benefits">
+
+
+<div class="benefit">
+
+<strong>
+BUILT & TESTED
+</strong>
+
+Before Shipping
+
+</div>
+
+
+<div class="benefit">
+
+<strong>
+GAMING READY
+</strong>
+
+Plug In & Play
+
+</div>
+
+
+<div class="benefit">
+
+<strong>
+UPGRADEABLE
+</strong>
+
+Built for the Future
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<footer>
+
+© 2026 RYVEXON PCs. All rights reserved.
+
+</footer>
+
+
+</div>
+
+
+
+<!-- ======================
+     JAVASCRIPT
+====================== -->
+
+<script>
+
+
+function openReaper() {
+
+    document.getElementById("mainWebsite")
+    .style.display = "none";
+
+    document.getElementById("reaperPage")
+    .style.display = "block";
+
+    window.scrollTo(0,0);
+
+}
+
+
+function closeReaper() {
+
+    document.getElementById("reaperPage")
+    .style.display = "none";
+
+    document.getElementById("mainWebsite")
+    .style.display = "block";
+
+    setTimeout(function(){
+
+        document.getElementById("gamingPCs")
+        .scrollIntoView();
+
+    },50);
+
+}
+
+
+function addToCart() {
+
+    document.getElementById("cartMessage")
+    .style.display = "block";
+
+}
+
+
+</script>
+
+
+</body>
+</html>
